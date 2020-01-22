@@ -1,0 +1,20 @@
+** Age Of Empires 2 : Definitive Edition Random Map Scripts Cleaner **
+
+Lets you generate the clean version of GeneratingObjects for a specified RMS !
+All the constants will be used to get what the game use to generate the map objects :)
+
+The program will prompt two things
+1) First Dialog, for the directory in which you want the output files
+2) Second Dialog, to select the RMS files to clean-up (multiple at once)
+Et voila.
+
+
+Limitations:
+* Doesn't work with conditional RMS (like MegaRandom) because of the Random Percents used to define constants on the fly.
+Thus, the program would need to iterate over all and every possible arrangements and generate equivalent files
+
+
+
+Evolutions:
+* Select Map Type (Tiny, Medium, Huge etc) as it influence the generated map
+Update generated map name with the map type
