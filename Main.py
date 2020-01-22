@@ -39,4 +39,4 @@ def main(dir_path: str = None, file_gen_path: str = None, file_path_list: list =
 
 
 if __name__ == '__main__':
-    main()
+    main(file_gen_path="assets/GeneratingObjects.inc")
