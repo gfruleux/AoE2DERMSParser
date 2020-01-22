@@ -1,3 +1,4 @@
+import argparse
 import tkinter
 from tkinter import filedialog
 
@@ -39,4 +40,12 @@ def main(dir_path: str = None, file_gen_path: str = None, file_path_list: list =
 
 
 if __name__ == '__main__':
-    main(file_gen_path="assets/GeneratingObjects.inc")
+    arg_parse = argparse.ArgumentParser()
+    arg_parse.add_argument("-gen", metavar="\"Path/to/GeneratingObjects.inc\"", default=None,
+                           help="Path of the GeneratingObjects.inc file from AoE2", )
+    arg_parse.add_argument("-out", metavar="\"Path/output/directory\"", default=None,
+                           help="Path of the Output directory for the parsed files")
+    arg_parse.add_argument("-rms", nargs="+", metavar="\"Path/to/.rms files\"", default=None,
+                           help="List of path of the RMS files to parse")
+    args = arg_parse.parse_args()
+    main(args.out, args.gen, args.rms)
