@@ -1,5 +1,5 @@
 class ParserMapConstFiles:
-    def __init__(self, path_list):
+    def __init__(self, path_list: list):
         self.path_list = path_list
         self._table_const = {}
         for file_path in self.path_list:
