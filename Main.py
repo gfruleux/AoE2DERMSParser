@@ -13,10 +13,13 @@ def run(main_frame, logger):
         table_gen_objects = pgo.get_result()
 
         logger("Parsing Map Const files ...")
-        pmcf = ParserMapConstFiles(main_frame.path_rms_files, [main_frame.get_map_size_key()])
+        pmcf = ParserMapConstFiles(main_frame.path_rms_files,
+                                   [main_frame.get_map_size_key(), main_frame.get_map_res_key()])
         dict_gen_const_by_map = pmcf.get_result()
+        logger("\nOutput dir set to " + main_frame.path_out_dir)
         for map_name in dict_gen_const_by_map:
-            final_file_name = "Cleaned_" + main_frame.get_map_size_reformat() + "_" + map_name
+            final_file_name = "Cleaned_" + main_frame.get_map_size_reformat() + "_" + main_frame.get_map_res_reformat() \
+                              + "_" + map_name
             with open(main_frame.path_out_dir + "/" + final_file_name, "w") as fp_write:
                 logger("\nStart Writing file " + final_file_name + " ... ")
                 table_const = dict_gen_const_by_map[map_name]
@@ -36,7 +39,7 @@ def run(main_frame, logger):
 
 
 def main(args):
-    main_frame = MainFrame(run, args.gen, args.out, args.rms, args.size)
+    main_frame = MainFrame(run, args.gen, args.out, args.rms, args.size, args.infinite)
     if not args.cmd:
         main_frame.draw()
     else:
@@ -59,9 +62,10 @@ if __name__ == '__main__':
     arg_parse.add_argument("-size", metavar="One of the possible map size", default="",
                            help="Available attributes are: TINY_MAP, SMALL_MAP, MEDIUM_MAP, LARGE_MAP, HUGE_MAP, "
                                 "GIGANTIC_MAP, LUDIKRIS_MAP or nothing for Normal maps")
+    arg_parse.add_argument("-i", "--infinite", help="Set the Map Resources to Infinite", action="store_true")
     args_dict = arg_parse.parse_args()
 
     if args_dict.cmd and (args_dict.gen is None or args_dict.out is None or args_dict.rms is None):
-        exit("You must provide -gen, -out and -rms when using --cmd")
+        exit("You must provide at least -gen, -out and -rms when using --cmd")
 
     main(args_dict)
