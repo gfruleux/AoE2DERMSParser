@@ -14,5 +14,4 @@ Thus, the program would need to iterate over all and every possible combination 
 
 
 _Evolutions_:
-* Select Resource mod (Infinite)
 * Select Map Type (KotH, Regicide, Random ...)
