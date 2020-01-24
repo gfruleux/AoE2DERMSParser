@@ -1,3 +1,4 @@
+# ### MAP SIZE
 MAP_SIZE_DICT = {
     "Tiny": "TINY_MAP",  # 2p
     "Small": "SMALL_MAP",  # 3p
@@ -20,7 +21,25 @@ MAP_SIZE_IDX = {
     "LUDIKRIS_MAP": 7
 }
 
+# ### MAP RESOURCES
 MAP_RESOURCES_DICT = {
     "Infinite": "INFINITE_RESOURCES",
     "Normal": ""
+}
+
+# ### MAP TYPES
+MAP_TYPE_DICT = {
+    "Normal": "",
+    "King of the Hill": "KING_OT_HILL",
+    "Empire Wars": "EMPIRE_WARS",
+    "Battle Royal": "BATTLE_ROYALE",
+    "Regicide": "REGICIDE"
+}
+
+MAP_TYPE_IDX = {
+    "": 0,
+    "KING_OT_HILL": 1,
+    "EMPIRE_WARS": 2,
+    "BATTLE_ROYALE": 3,
+    "REGICIDE": 4
 }
