@@ -1,6 +1,6 @@
 from aoe2de_rms_gen_obj_parser import GeneratingObjectsParser
 
-from gui.MainFrame import MainFrame
+from frame import MainFrame
 
 
 class ParserAdapter:

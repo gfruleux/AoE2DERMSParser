@@ -5,7 +5,7 @@ import tkinter.font as tkfont
 from tkinter import ttk, filedialog as dial
 from tkinter.scrolledtext import ScrolledText
 
-from const.File import FILE_OPTION_GEN, FILE_OPTION_RMS
+from const import FILE_OPTION_GEN, FILE_OPTION_RMS
 from aoe2de_rms_gen_obj_parser.const import *
 
 
