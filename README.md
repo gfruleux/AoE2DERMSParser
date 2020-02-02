@@ -3,9 +3,6 @@
 Lets you generate the clean version of GeneratingObjects for specified RMS !
 All the constants will be used to get what the game use to generate the map objects :)
 
-The program will ask you to
-1) Select the Random Map Script files you want to parse
-2) Select the Output directory for the parsed files
 
 
 _Limitations_:
